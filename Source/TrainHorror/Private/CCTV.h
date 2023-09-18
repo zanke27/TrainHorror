@@ -26,4 +26,22 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+public:
+	UPROPERTY(BlueprintReadWrite, BlueprintReadWrite, Category = CCTV)
+	class ACameraActor* cctv1 = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, BlueprintReadWrite, Category = CCTV)
+	class ACameraActor* cctv2 = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, BlueprintReadWrite, Category = CCTV)
+	class ACameraActor* cctv3 = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, BlueprintReadWrite, Category = CCTV)
+	class ACameraActor* cctv4 = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, BlueprintReadWrite, Category = CCTV)
+	class ACameraActor* cctv5 = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, BlueprintReadWrite, Category = CCTV)
+	class ACameraActor* cctv6 = nullptr;
 };
