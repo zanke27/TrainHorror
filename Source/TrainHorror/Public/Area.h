@@ -16,9 +16,27 @@ public:
 	AArea();
 
 	UPROPERTY(EditAnywhere)
-	class AMonster* monster;
+	class AActor* monster_1;
 	UPROPERTY(EditAnywhere)
-	FVector spawnPosition;
+	class AActor* monster_2;
+	UPROPERTY(EditAnywhere)
+	class AActor* monster_3;
+	UPROPERTY(EditAnywhere)
+	class AActor* monster_4;
+	UPROPERTY(EditAnywhere)
+	int monsterCount;
+	UPROPERTY(EditAnywhere)
+	int curActiveMonsterIndex;
+	UPROPERTY(EditAnywhere)
+	bool isMonsterActiving;
+	UPROPERTY(EditAnywhere)
+	FString caseText_1;
+	UPROPERTY(EditAnywhere)
+	FString caseText_2;
+	UPROPERTY(EditAnywhere)
+	FString caseText_3;
+	UPROPERTY(EditAnywhere)
+	FString caseText_4;
 
 protected:
 	// Called when the game starts or when spawned
@@ -28,4 +46,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void Enable(int index);
+	void ReportArea(int reportIndex);
+	FString GetText(int index);
 };
