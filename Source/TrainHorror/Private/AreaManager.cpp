@@ -22,6 +22,6 @@ void AAreaManager::BeginPlay()
 void AAreaManager::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	time += DeltaTime;
 }
 
