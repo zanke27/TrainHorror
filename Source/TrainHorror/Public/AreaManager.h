@@ -16,22 +16,32 @@ public:
 	AAreaManager();
 
 public:
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UUserWidget* reportWBP;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class AArea* area_1;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class AArea* area_2;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class AArea* area_3;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class AArea* area_4;
-	UPROPERTY(EditAnywhere)
-	class AArea* area_5;
-	UPROPERTY(EditAnywhere)
-	class AArea* area_6;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int curHP;
+
+	//UFUNCTION(BlueprintCallable, BlueprintPure, Category = "AreaManager")
+	//int32 ADD(int32 a, int32 b)
+	//{
+	//	return a + b;
+	//}
+	UFUNCTION(BlueprintCallable, Category = "AreaManager")
+	bool Report(int areaIndex, int reportIndex);
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	virtual void Die();
 
 private:
 	float time;

@@ -46,7 +46,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	void Enable(int index);
-	void ReportArea(int reportIndex);
+	void Enable();
+	bool ReportArea(int reportIndex);
 	FString GetText(int index);
 };

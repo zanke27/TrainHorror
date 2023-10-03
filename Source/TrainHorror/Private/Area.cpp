@@ -15,43 +15,63 @@ AArea::AArea()
 void AArea::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	if (monster_1)
+	{
+		monster_1->SetActorHiddenInGame(true);
+	}
+	if (monster_2)
+	{
+		monster_2->SetActorHiddenInGame(true);
+	}
+	if (monster_3)
+	{
+		monster_3->SetActorHiddenInGame(true);
+	}
+	if (monster_4)
+	{
+		monster_4->SetActorHiddenInGame(true);
+	}
 }
 
 // Called every frame
 void AArea::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
-void AArea::Enable(int index)
+void AArea::Enable()
 {
 	if (isMonsterActiving)
 		return;
 
-	if (index >= monsterCount) {
-		index = monsterCount;
-	}
+	int index = (FMath::Rand() % monsterCount) + 1;
 
-	monster_1->SetActorHiddenInGame(false);
-	monster_2->SetActorHiddenInGame(false);
-	monster_3->SetActorHiddenInGame(false);
-	monster_4->SetActorHiddenInGame(false);
+	if (monster_1)
+		monster_1->SetActorHiddenInGame(true);
+	if (monster_2)
+		monster_2->SetActorHiddenInGame(true);
+	if (monster_3)
+		monster_3->SetActorHiddenInGame(true);
+	if (monster_4)
+		monster_4->SetActorHiddenInGame(true);
 
 	switch (index)
 	{
 	case 1:
-		monster_1->SetActorHiddenInGame(true);
+		if (monster_1)
+			monster_1->SetActorHiddenInGame(false);
 		break;
 	case 2:
-		monster_2->SetActorHiddenInGame(true);
+		if (monster_2)
+			monster_2->SetActorHiddenInGame(false);
 		break;
 	case 3:
-		monster_3->SetActorHiddenInGame(true);
+		if (monster_3)
+			monster_3->SetActorHiddenInGame(false);
 		break;
 	case 4:
-		monster_4->SetActorHiddenInGame(true);
+		if (monster_4)
+			monster_4->SetActorHiddenInGame(false);
 		break;
 	default:
 		break;
@@ -61,17 +81,24 @@ void AArea::Enable(int index)
 	isMonsterActiving = true;
 }
 
-void AArea::ReportArea(int reportIndex)
+bool AArea::ReportArea(int reportIndex)
 {
 	if (curActiveMonsterIndex != reportIndex)
-		return;
+	{
+		return false;
+	}
 
-	monster_1->SetActorHiddenInGame(false);
-	monster_2->SetActorHiddenInGame(false);
-	monster_3->SetActorHiddenInGame(false);
-	monster_4->SetActorHiddenInGame(false);
+	if (monster_1)
+		monster_1->SetActorHiddenInGame(true);
+	if (monster_2)
+		monster_2->SetActorHiddenInGame(true);
+	if (monster_3)
+		monster_3->SetActorHiddenInGame(true);
+	if (monster_4)
+		monster_4->SetActorHiddenInGame(true);
 
 	isMonsterActiving = false;
+	return true;
 }
 
 FString AArea::GetText(int index)
