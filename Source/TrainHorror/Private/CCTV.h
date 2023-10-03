@@ -27,21 +27,28 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 public:
-	UPROPERTY(BlueprintReadWrite, BlueprintReadWrite, Category = CCTV)
+	UPROPERTY(BlueprintReadWrite, Category = CCTV)
 	class ACameraActor* cctv1 = nullptr;
 
-	UPROPERTY(BlueprintReadWrite, BlueprintReadWrite, Category = CCTV)
+	UPROPERTY(BlueprintReadWrite, Category = CCTV)
 	class ACameraActor* cctv2 = nullptr;
 
-	UPROPERTY(BlueprintReadWrite, BlueprintReadWrite, Category = CCTV)
+	UPROPERTY(BlueprintReadWrite, Category = CCTV)
 	class ACameraActor* cctv3 = nullptr;
 
-	UPROPERTY(BlueprintReadWrite, BlueprintReadWrite, Category = CCTV)
+	UPROPERTY(BlueprintReadWrite, Category = CCTV)
 	class ACameraActor* cctv4 = nullptr;
 
-	UPROPERTY(BlueprintReadWrite, BlueprintReadWrite, Category = CCTV)
+	UPROPERTY(BlueprintReadWrite, Category = CCTV)
 	class ACameraActor* cctv5 = nullptr;
 
-	UPROPERTY(BlueprintReadWrite, BlueprintReadWrite, Category = CCTV)
+	UPROPERTY(BlueprintReadWrite, Category = CCTV)
 	class ACameraActor* cctv6 = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, Category = CCTV)
+	class ASceneCapture2D* sceneCapture2D = nullptr;
+
+public:
+	UFUNCTION(BlueprintCallable, Category = CCTV)
+	void SetSceneScapture2DPos(int index);
 };
