@@ -20,10 +20,6 @@ public:
 	UPROPERTY(EditAnywhere)
 	class AActor* monster_2;
 	UPROPERTY(EditAnywhere)
-	class AActor* monster_3;
-	UPROPERTY(EditAnywhere)
-	class AActor* monster_4;
-	UPROPERTY(EditAnywhere)
 	int monsterCount;
 	UPROPERTY(EditAnywhere)
 	int curActiveMonsterIndex;
@@ -33,10 +29,6 @@ public:
 	FString caseText_1;
 	UPROPERTY(EditAnywhere)
 	FString caseText_2;
-	UPROPERTY(EditAnywhere)
-	FString caseText_3;
-	UPROPERTY(EditAnywhere)
-	FString caseText_4;
 
 protected:
 	// Called when the game starts or when spawned

@@ -26,6 +26,10 @@ public:
 	class AArea* area_3;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class AArea* area_4;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	class AArea* area_5;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	class AArea* area_6;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int curHP;
