@@ -43,9 +43,9 @@ void ACCTV::BeginPlay()
 
 		if (Actor->IsA(ACameraActor::StaticClass()) && Actor->GetActorLabel() == TEXT("CCTV6"))
 			cctv6 = Cast<ACameraActor>(Actor);
-			
-		if (Actor->GetActorLabel() == TEXT("SceneCapture2D"))
-			sceneCapture2D = Cast<ASceneCapture2D>(Actor);
+		//	
+		//if (Actor->GetActorLabel() == TEXT("SceneCapture2D"))
+		//	sceneCapture2D = Cast<ASceneCapture2D>(Actor);
 	}
 	
 }
