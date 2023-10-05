@@ -29,6 +29,12 @@ bool AAreaManager::Report(int areaIndex, int reportIndex)
 	case 4:
 		area = area_4;
 		break;
+	case 5:
+		area = area_5;
+		break;
+	case 6:
+		area = area_6;
+		break;
 	default:
 		break;
 	}
@@ -66,7 +72,7 @@ void AAreaManager::Tick(float DeltaTime)
 	if (time >= 6) 
 	{
 		time = 0;
-		int rand = FMath::Rand() % 4;
+		int rand = FMath::Rand() % 6;
 		rand += 1;
 		UE_LOG(LogTemp, Log, TEXT("???"));
 
@@ -83,6 +89,12 @@ void AAreaManager::Tick(float DeltaTime)
 			break;
 		case 4:
 			area_4->Enable();
+			break;
+		case 5:
+			area_5->Enable();
+			break;
+		case 6:
+			area_6->Enable();
 			break;
 		default:
 			break;

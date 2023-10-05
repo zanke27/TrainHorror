@@ -23,14 +23,6 @@ void AArea::BeginPlay()
 	{
 		monster_2->SetActorHiddenInGame(true);
 	}
-	if (monster_3)
-	{
-		monster_3->SetActorHiddenInGame(true);
-	}
-	if (monster_4)
-	{
-		monster_4->SetActorHiddenInGame(true);
-	}
 }
 
 // Called every frame
@@ -50,10 +42,6 @@ void AArea::Enable()
 		monster_1->SetActorHiddenInGame(true);
 	if (monster_2)
 		monster_2->SetActorHiddenInGame(true);
-	if (monster_3)
-		monster_3->SetActorHiddenInGame(true);
-	if (monster_4)
-		monster_4->SetActorHiddenInGame(true);
 
 	switch (index)
 	{
@@ -64,14 +52,6 @@ void AArea::Enable()
 	case 2:
 		if (monster_2)
 			monster_2->SetActorHiddenInGame(false);
-		break;
-	case 3:
-		if (monster_3)
-			monster_3->SetActorHiddenInGame(false);
-		break;
-	case 4:
-		if (monster_4)
-			monster_4->SetActorHiddenInGame(false);
 		break;
 	default:
 		break;
@@ -92,10 +72,6 @@ bool AArea::ReportArea(int reportIndex)
 		monster_1->SetActorHiddenInGame(true);
 	if (monster_2)
 		monster_2->SetActorHiddenInGame(true);
-	if (monster_3)
-		monster_3->SetActorHiddenInGame(true);
-	if (monster_4)
-		monster_4->SetActorHiddenInGame(true);
 
 	isMonsterActiving = false;
 	return true;
@@ -110,12 +86,6 @@ FString AArea::GetText(int index)
 		break;
 	case 2:
 		return caseText_2;
-		break;
-	case 3:
-		return caseText_3;
-		break;
-	case 4:
-		return caseText_4;
 		break;
 	default:
 		return FString();
