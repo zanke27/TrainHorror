@@ -41,6 +41,8 @@ public:
 	//}
 	UFUNCTION(BlueprintCallable, Category = "AreaManager")
 	bool Report(int areaIndex, int reportIndex);
+	UFUNCTION(BlueprintCallable, Category = "AreaManager")
+	FString GetText(int index);
 
 protected:
 	// Called when the game starts or when spawned
@@ -49,6 +51,7 @@ protected:
 
 private:
 	float time;
+	int _curAreaIndex;
 
 public:	
 	// Called every frame

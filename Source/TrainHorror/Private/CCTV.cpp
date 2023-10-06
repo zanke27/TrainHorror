@@ -5,6 +5,7 @@
 #include "GameFramework/Actor.h"
 #include "Camera/CameraActor.h"
 #include "Engine/SceneCapture2D.h"
+#include "AreaManager.h"
 #include <Kismet/GameplayStatics.h>
 
 // Sets default values
@@ -26,7 +27,7 @@ void ACCTV::BeginPlay()
 
 	for (AActor* Actor : FoundActors)
 	{
-		if (Actor->IsA(ACameraActor::StaticClass()) && Actor->GetActorLabel() == TEXT("CCTV1"))
+		if (Actor->IsA(ACameraActor::StaticClass()) && Actor->GetActorLabel() == TEXT("CCTV1")) 
 			cctv1 = Cast<ACameraActor>(Actor);
 		
 		if (Actor->IsA(ACameraActor::StaticClass()) && Actor->GetActorLabel() == TEXT("CCTV2"))

@@ -14,6 +14,7 @@ AAreaManager::AAreaManager()
 
 bool AAreaManager::Report(int areaIndex, int reportIndex)
 {
+	_curAreaIndex = areaIndex;
 	AArea* area = nullptr;
 	switch (areaIndex)
 	{
@@ -39,16 +40,52 @@ bool AAreaManager::Report(int areaIndex, int reportIndex)
 		break;
 	}
 
-	bool result = area->ReportArea(reportIndex);
-	if (result == false)
-	{
-		curHP--;
-		if (curHP <= 0) 
-		{
-			Die();
-		}
+	if (area == nullptr) {
+		return false;
 	}
+
+	bool result = area->ReportArea(reportIndex);
 	return result;
+}
+
+FString AAreaManager::GetText(int index)
+{
+	AArea* area = nullptr;
+	switch (_curAreaIndex)
+	{
+	case 1:
+		area = area_1;
+		break;
+	case 2:
+		area = area_2;
+		break;
+	case 3:
+		area = area_3;
+		break;
+	case 4:
+		area = area_4;
+		break;
+	case 5:
+		area = area_5;
+		break;
+	case 6:
+		area = area_6;
+		break;
+	default:
+		break;
+	}
+
+	if (area == nullptr)
+		return FString();
+
+	if (index == 1)
+	{
+		return area->caseText_1;
+	}
+	else 
+	{
+		return area->caseText_2;
+	}
 }
 
 // Called when the game starts or when spawned
